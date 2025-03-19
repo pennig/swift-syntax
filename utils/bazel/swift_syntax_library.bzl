@@ -12,6 +12,10 @@ def swift_syntax_library(name, deps, srcs = None, testonly = False):
             exclude = ["**/*.docc/**"],
             allow_empty = False,
         ),
+        copts = [
+            "-DRESILIENT_LIBRARIES",
+        ],
+        library_evolution = True,
         module_name = name,
         deps = deps,
         testonly = testonly,
